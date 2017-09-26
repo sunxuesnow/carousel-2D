@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>两张照片旋转</title>
+    <style>
+        #container{
+            width: 500px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #container img{
+            position: absolute;//才能设z-index
+            top: 0;
+            left: 0;
+            border: 10px solid #ffffff;
+            box-shadow: 5px 5px 5px rgba(50,50,50,.4);
+            transition:all 1s ease;
+        }
+        #container img:first-child{
+            transform:rotate(30deg);
+        }
+        #container img:last-child{
+            transform:rotate(-20deg);
+        }
+        #container img:hover{
+            box-shadow: 10px 10px 10px rgba(50,50,50,.4);
+            transform:scale(1.2);//rotate(0)默认了
+            z-index:1;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="imgs/img01.jpg" alt=""/>
+        <img src="imgs/img02.jpg" alt=""/>
+    </div>
+</body>
+</html>
